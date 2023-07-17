@@ -1,2 +1,2 @@
-# Cheesy-Websity
-website that does thingd
+# Cheesy-Websitey
+a website that does things
