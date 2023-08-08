@@ -59,8 +59,8 @@ function Circle(x, y, dx, dy, radius) {
 
 circleArray = []
 
-for (var i = 0; i < 200; i++) {
-    var radius = Math.random(10, 30)
+for (var i = 0; i < 300; i++) {
+    var radius = Math.random()
     var x = Math.random() * (window.innerWidth - radius * 2) + radius;
     var y = Math.random() * (window.innerHeight - radius * 2) + radius;
     var dx = (Math.random() - 0.5) * 3;

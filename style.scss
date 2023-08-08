@@ -109,34 +109,3 @@ body {
        background-color: dimgray; 
     }
 }
-  
-  #chat {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  #messages {
-    flex-grow: 1;
-    margin-bottom: 10px;
-    overflow-y: auto;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  #input {
-    margin-bottom: 10px;
-    padding: 5px;
-  }
-  
-  #sendButton {
-    padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
