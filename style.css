@@ -1,76 +1,14 @@
-h1 {
-  color: blue;
-  font-size: 44px;
-  font-family: "Courier New", Courier, monospace;
-  background-color: rgb(85, 85, 85);
-  display: flex;
-  justify-content: center;
-}
-h1 button {
-  height: 40px;
-  border: 2px solid black;
-  width: 100px;
-  display: flex;
-  justify-content: left;
-  background-color: aqua;
-  margin-left: 50px;
-}
-h1 button:hover {
-  background-color: lightblue;
-}
-
-.login {
-  color: black;
-  background-color: aqua;
-  height: 80px;
-  border: 5px solid black;
-  width: 300px;
-  padding: 20px;
-  font-size: 30px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 200px);
-  z-index: 9999;
-}
-.login:hover {
-  background-color: lightblue;
-}
-
-.box {
+.hi {
+  color: white;
   height: 195px;
   border: 5px solid black;
   width: 300px;
-  padding: 20px;
-  background-color: rgb(85, 85, 85);
-  border-radius: 10px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 9999;
-}
-
-textarea {
-  height: 50px;
-  width: 280px;
-  border: 5px solid grey;
-  font-size: 40px;
-  resize: none;
-  align-items: center;
-}
-
-.text {
-  font-size: 30px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-}
-
-a {
-  background-color: rgb(100, 89, 89);
-  font-size: 30px;
-  font-family: "Courier New", Courier, monospace;
-  color: rgb(85, 85, 85);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 50px;
 }
 
 body {
@@ -97,8 +35,10 @@ body {
   }
 }
 .changepage {
-  height: 25px;
-  width: 60px;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   background-color: black;
   color: white;
   border-radius: 30px;
