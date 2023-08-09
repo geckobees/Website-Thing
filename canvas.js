@@ -5,25 +5,27 @@ canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d')
 
-// c.fillRect(100, 100, 100, 100)
+c.fillRect(100, 100, 100, 100)
 
 //draw a line
-
-// c.beginPath();
-// c.moveTo(50, 300);
-// c.lineTo(300, 100);
-// c.lineTo(100, 100);
-// c.stroke();
-
 //circle
 
-// for (var i = 0; i < 200; i++) {
-//     c.beginPath();
-//     c.arc(Math.random() * window.innerWidth, Math.random() * window.innerHeight, 50, 0, Math.PI * 2, false)
-//     c.stroke();
-// }
+var maxRadius = 40
 
+var mouse = {
+    x: undefined,
+    y: undefined
+}
 
+window.addEventListener('mousemove', function(event){
+    mouse.x = event.x
+    mouse.y = event.y
+})
+
+window.addEventListener('resize', function(){
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+})
 
 
 function Circle(x, y, dx, dy, radius) {
@@ -31,15 +33,17 @@ function Circle(x, y, dx, dy, radius) {
     this.y = y;
     this.dx = dx;
     this.dy = dy;
-    this.radius = radius;
+    this.minRadius = radius;
     
-    this.draw = function() {
+    this.draw = function() { // how to draw the shape
         c.beginPath();
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
-        c.stroke();     
+        c.stroke();
+        
+            
     }
 
-    this.update = function(){
+    this.update = function(){ // movement
         this.x += this.dx;
 
         this.y += this.dy;
@@ -49,23 +53,36 @@ function Circle(x, y, dx, dy, radius) {
         }
         if (this.y + this.radius > innerHeight|| this.y - this.radius < 0){
             this.dy = -this.dy;
+            console.log('ow')
         }
         this.draw()
+
+        
+        //interactivity
+
+        if (mouse.x - this.x < 50 && mouse.x - this.x > -50 && mouse.y - this.y < 50 && mouse.y - this.y > -50 ){
+            if (this.radius <  this.minRadius){
+                this.radius += 6
+            }
+        }else if(this.radius > this.minRadius){
+            this.radius -= 1
+        }
+
     }
 
 
 }
 
+var circleArray = [];
 
-circleArray = []
-
-for (var i = 0; i < 300; i++) {
-    var radius = Math.random()
+for (var i = 0; i < 600; i++) {
+    var radius = Math.random(0.5, 1) * 15 + 1
     var x = Math.random() * (window.innerWidth - radius * 2) + radius;
     var y = Math.random() * (window.innerHeight - radius * 2) + radius;
     var dx = (Math.random() - 0.5) * 3;
     var dy = (Math.random() - 0.5) * 3;
     circleArray.push(new Circle(x, y, dx, dy, radius))
+    console.log('draw');
 }
 
 
