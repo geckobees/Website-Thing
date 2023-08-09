@@ -17,6 +17,14 @@ var mouse = {
     y: undefined
 }
 
+var colorArray = [
+    '#ea9e8d',
+    '#daefb3',
+    '#eef4d4',
+    '#d64550',
+    '#1c2826'
+]
+
 window.addEventListener('mousemove', function(event){
     mouse.x = event.x
     mouse.y = event.y
@@ -35,10 +43,12 @@ function Circle(x, y, dx, dy, radius) {
     this.dy = dy;
     this.radius = radius
     this.minRadius = radius;
+    this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
     
     this.draw = function() { // how to draw the shape
         c.beginPath();
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
+        c.fillStyle = this.color;
         c.fill();
         
             
@@ -76,7 +86,7 @@ function Circle(x, y, dx, dy, radius) {
 var circleArray = [];
 
 for (var i = 0; i < 600; i++) {
-    var radius = Math.random() * 3 + 1
+    var radius = Math.random() * 10 + 1
     var x = Math.random() * (window.innerWidth - radius * 2) + radius;
     var y = Math.random() * (window.innerHeight - radius * 2) + radius;
     var dx = (Math.random() - 0.5) * 3;
