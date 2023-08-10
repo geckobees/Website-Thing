@@ -5,8 +5,6 @@ canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d')
 
-c.fillRect(100, 100, 100, 100)
-
 //draw a line
 //circle
 
@@ -28,11 +26,13 @@ var colorArray = [
 window.addEventListener('mousemove', function(event){
     mouse.x = event.x
     mouse.y = event.y
+
 })
 
 window.addEventListener('resize', function(){
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
+    init();
 })
 
 
@@ -50,8 +50,6 @@ function Circle(x, y, dx, dy, radius) {
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
         c.fillStyle = this.color;
         c.fill();
-        
-            
     }
 
     this.update = function(){ // movement
@@ -85,15 +83,17 @@ function Circle(x, y, dx, dy, radius) {
 
 var circleArray = [];
 
-for (var i = 0; i < 600; i++) {
-    var radius = Math.random() * 10 + 1
-    var x = Math.random() * (window.innerWidth - radius * 2) + radius;
-    var y = Math.random() * (window.innerHeight - radius * 2) + radius;
-    var dx = (Math.random() - 0.5) * 3;
-    var dy = (Math.random() - 0.5) * 3;
-    circleArray.push(new Circle(x, y, dx, dy, radius))
+function init(){
+    circleArray = []
+    for (var i = 0; i < 700; i++) {
+        var radius = Math.random() * 10 + 1
+        var x = Math.random() * (window.innerWidth - radius * 2) + radius;
+        var y = Math.random() * (window.innerHeight - radius * 2) + radius;
+        var dx = (Math.random() - 0.5) * 3;
+        var dy = (Math.random() - 0.5) * 3;
+        circleArray.push(new Circle(x, y, dx, dy, radius))
+    }
 }
-
 
 function animate() {
     requestAnimationFrame(animate);
@@ -104,3 +104,4 @@ function animate() {
 }
 
 animate();
+init();

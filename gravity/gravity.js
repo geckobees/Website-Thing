@@ -6,7 +6,7 @@ var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
 
 canvas.width = innerWidth;
-canvas.height = innerHeight;
+canvas.height = innerHeight - 21;
 
 
 // Variables
@@ -23,7 +23,7 @@ var colors = [
 ];
 
 var gravity = 0.2;
-var friction = 0.98;
+var friction = 0.98 ;
 
 
 // Event Listeners
@@ -34,7 +34,9 @@ addEventListener("mousemove", function(event) {
 
 addEventListener("resize", function() {
 	canvas.width = innerWidth;	
-	canvas.height = innerHeight;
+	canvas.height = innerHeight - 21;
+
+	init();
 });
 
 addEventListener("click", function(event) {
