@@ -5,18 +5,14 @@ canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
 
-var currentKey = undefined
-var currentKeyup = undefined
+var mouse = {
+    x: undefined,
+    y: undefined
+}
 
-window.addEventListener('keydown', function(event){
-    currentKey = event.key
-    console.log(currentKey)
+window.addEventListener('mousedown', function(event){
+    console.log(event);
 });
-window.addEventListener('keypress', function(event){
-    currentKeyup = event.key
-    console.log(currentKeyup)
-});
-
 
 function MainPlayer(x, y) {
     this.x = x;
